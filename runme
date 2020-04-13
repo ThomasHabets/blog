@@ -1,0 +1,5 @@
+#!/bin/bash
+set -e
+cat static/{jquery-3.2.1.min,ga,ping}.js /var/www/cdn.habets.se/performance.js > static/bundle.js
+# bundle exec jekyll build --destination /var/www/blog.habets.se/
+exec bundle exec jekyll build "$@"

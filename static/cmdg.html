@@ -1,0 +1,155 @@
+<html>
+  <head>
+    <title>cmdg - A command line client to GMail</title>
+  </head>
+  <body style="max-width: 70em; margin-left: auto; margin-right: auto">
+   <h1>cmdg - A command line client to GMail</h1>
+
+   <div style="background-color: lightblue; padding: 1em;">
+     <h2>Project home page / description</h2>
+     <p>
+       Copyright Thomas Habets &lt;thomas@habets.se&gt; 2015-2019
+     </p>
+
+     <p>
+       cmdg is a commandline client to GMail that provides a UI more
+       similar to Pine/Alpine.
+     </p>
+     <p>
+       cmdg is open source with the
+       code <a href="https://github.com/ThomasHabets/cmdg">available
+       on github</a>. See that project page for installation
+       and setup instructions.
+     </p>
+     <p>
+       It uses the GMail API to interact with your mailbox. This has
+       several benefits.
+     </p>
+
+     <h3>Benefits over IMAP</h3>
+     <p>
+       <ul>
+         <li>
+           No passwords stored on disk. (application-specific
+           passwords are also passwords, and can be used for more than
+           GMail). OAuth2 is used instead, and cmdgs access can be
+           revoked
+           <a href="https://security.google.com/settings/security/permissions">here</a>.
+           cmdg can only access your GMail, and cannot lose your
+           password even if the machine it runs on gets hacked.
+         </li>
+         <li>
+           The "labels" model is native in the cmdg UI, unlike IMAP
+           clients that try to map GMail labels onto IMAP.
+         </li>
+         <li>Contacts are taken from your Google contacts</li>
+       </ul>
+     </p>
+
+     <h3> Benefits over the GMail web UI</h3>
+     <p>
+       <ul>
+         <li>
+           Emacs-ish keys. If there's a need the key mapping can be
+           made configurable.
+         </li>
+         <li>Uses a real $EDITOR.</li>
+         <li>
+           Really fast. No browser, CSS, or javascript getting in the
+           way.
+         </li>
+         <li>
+           Proper quoting. The GMail web UI encourages
+           top-posting. Ugh
+         </li>
+         <li>
+           It uses 100% keyboard navigation. GMail web UI has very
+           good keyboard navigation for a web app, but still requires
+           mouse for a few things
+         </li>
+         <li>cmdg works without a graphic terminal</li>
+         <li>
+           cmdg uses less bandwidth (citation needed), and much less
+           memory
+         </li>
+         <li>
+           Local GPG integration. There are currently no *good* ways
+           to integrate GPG with the GMail web UI
+         </li>
+       </ul>
+     </p>
+
+     <p>
+       Google OAuth consent screen requires a home page and privacy
+       policy, so this is it.
+     </p>
+
+   </div>
+
+   <div style="background-color: lightgreen; padding: 1em;">
+     <a name="privacy"><h2>cmdg Privacy policy</h2></a>
+
+     <h3>What data cmdg accesses</h3>
+     <p>
+       <ul>
+         <li>Your emails when you read them</li>
+         <li>Your emails when you write them</li>
+         <li>Your contacts in order to help you send email to them</li>
+         <li>Its own settings in a hidden Google Drive folder</li>
+       </ul>
+     </p>
+
+     <h3>What data cmdg shares</h3>
+     <p>
+       Emails you send with cmdg are sent to your recipients via the
+       GMail API, exactly what you'd expect.
+     </p>
+     <p>
+       In plain words: This is an email client you run on your own
+       machine as an interface to the GMail API. It won't upload your
+       emails anywhere for "processing" by any third party. Your emails
+       just go between you on your machine and your GMail account.
+     </p>
+
+     <h3>What data cmdg stores</h3>
+     <p>
+       If cmdg fails to send an email for you (for example due to a
+       network outage), it give you the option to save the draft to your
+       local hard drive.
+     </p>
+     <p>
+       Settings, such as your email signature, is saved in Google Drive
+       for you in your account, and nobody else is given access to such
+       settings.
+     </p>
+     <p>
+       cmdg never stores any data outside of your Google account (and
+       doesn't grant access to anyone else), and only sends data
+       anywhere, and then only to the recipient, when you choose to send
+       an email.
+     </p>
+     <p>
+       The only thing stored locally is the OAuth access tokens, just
+       like how Chrome has access tokens to browse to mail.google.com.
+     </p>
+
+     <h3>How cmdg uses your data</h3>
+     <p>
+       No ads, no sharing to third parties or to cmdg authors. Your data
+       is only used and processed as required to read and write emails.
+     </p>
+
+     <h2>Changes to This Privacy Policy</h2>
+     <p>
+       This privacy policy will not substantially change, but if in
+       order to provide a better email client by e.g. using more APIs
+       cmdg processes more user data, it will be added to this page.
+     </p>
+
+     <h2>Contact</h2>
+     <p>
+       For any questions email thomas@habets.se.
+     </p>
+   </div>
+  </body>
+</html>

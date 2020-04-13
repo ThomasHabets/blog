@@ -1,0 +1,34 @@
+---
+layout: blargh
+---
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+
+  <header class="post-header">
+    <div style="color: #444; font-size: 6">This is my personal blog. The views expressed on these pages are mine alone and not those of my employer.</div>
+    <h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>
+    <!--
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle horizontal-ad"
+         style="display:inline-block;width:320px;height:100px"
+         data-ad-client="ca-pub-4148956918309843"
+         data-ad-slot="2882811709"></ins>
+    <script async src="/static/ads.js"></script>
+-->
+    <p class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>,
+      Categories: {{ page.categories }}
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  <div id="disqus_thread"></div>
+  <div id="disqus_placeholder"></div>
+  <noscript><a href="https://blargh.disqus.com/?url=ref&https" ping="/ping">View the comments.</a></noscript>
+  <input type="hidden" id="disqus-identifier" value="{{page.date | date: "/%Y/%m"}}/{{page.title | replace: " ", "-"}}" />
+  <script type="text/javascript" src="/static/disqus-id.js"></script>
+  <script async type="text/javascript" src="https://disqus.com/forums/blargh/embed.js?https"></script>
+</article>

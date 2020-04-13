@@ -1,0 +1,31 @@
+<head>
+  {% assign default_src = "'self' https://disqus.com https://*.disqus.com https://apis.google.com https://*.disquscdn.com https://pagead2.googlesyndication.com/ https://stats.g.doubleclick.net" %}
+  {% assign style_src   = "'self'  https://*.disquscdn.com" %}
+  {% assign frame_src   = "https://accounts.google.com https://apis.google.com https://disqus.com https://googleads.g.doubleclick.net" %}
+  {% assign img_src     = "'self' http://www.habets.pp.se https://cdn.habets.se" %}
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src {{ default_src }}; style-src {{ style_src }}; frame-src {{ frame_src }}; img-src {{ img_src }}"> -->
+  <link rel="preload" as="style" href="/css/main.css">
+  <link rel="preload" as="script" href="/static/bundle.js">
+  <link rel="preconnect" href="https://cdn.habets.se">
+  <link rel="preconnect" href="https://stats.g.doubleclick.net">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/static/apple-touch-icon.png"/>
+  <link rel="apple-touch-icon" sizes="114x114" href="/static/apple-touch-icon.png"/>
+  <link rel="apple-touch-icon" sizes="144x144" href="/static/apple-touch-icon.png"/>
+  <link rel="index up" href="/" />
+  <meta name="theme-color" content="#121925">
+  <meta name="msapplication-navbutton-color" content="#121925">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#121925">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+
+  {% assign custom_url = site.url | append: site.baseurl %}
+  {% assign full_base_url = custom_url | default: site.github.url %}
+  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: full_base_url }}">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: full_base_url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | prepend: full_base_url }}">
+</head>

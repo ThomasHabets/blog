@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </main>
+
+    {% include footer.html %}
+
+  </body>
+<!--
+  <iframe style="display: none" src="/ping"></iframe>
+
+  In Bundle:
+  <script defer async type="text/javascript" src="/static/ga.js"></script>
+  <script defer async type="text/javascript" src="/static/jquery-3.2.1.min.js"></script>
+  <script defer async type="text/javascript" src="/static/ping.js"></script>
+  <script defer async type="text/javascript" src="https://cdn.habets.se/performance.js"></script>
+-->
+  <script defer async type="text/javascript" src="/static/bundle.js"></script>
+</html>
